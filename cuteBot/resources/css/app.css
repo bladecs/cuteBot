@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "LatoBold";
+    src: url('{{ asset("font/Lato-Bold.ttf") }}') format("truetype");
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "LatoRegu";
+    src: url('{{ asset("font/Lato-Regular.ttf") }}') format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+.wlc-dash {
+    background: linear-gradient(to right, #7a97cb, #e282b3, #e8dde8);
+    animation-duration: 1s;
+}
+
+.slide-left {
+    animation-name: slideLeft;
+}
+
+.slide-right {
+    animation-name: slideRight;
+}
+
+.title {
+    font-family: "LatoBold", sans-serif;
+    font-size: 50px;
+}
+
+.title-form {
+    font-family: "LatoBold", sans-serif;
+    font-size: 2rem;
+}
+
+.descrip {
+    font-family: "LatoRegu", sans-serif;
+    font-size: 18px;
+}
+
+#spn1,
+#spn3 {
+    background: #2aa8de;
+}
+
+#spn2 {
+    background: #8be8bb;
+}
+
+#spn1_wht,
+#spn3_wht {
+    background: #ffffff;
+}
+
+#spn2_wht {
+    background: #ffffff;
+}
+
+.animate-bounce {
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+.animate-pulse {
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+.card-bg {
+    background: linear-gradient(to top, #43a5dc, #ff7bac);
+}
+
+.logo-rounded {
+    border-radius: 80px;
+}
+
+#label-input {
+    z-index: 99;
+    position: relative;
+    left: 15px;
+    top: 10px;
+    background: #ffffff;
+    width: fit-content;
+    padding-left: 2px;
+    padding-right: 8px;
+}
+
+#label-name {
+    z-index: 99;
+    position: relative;
+    left: 15px;
+    top: 13px;
+    background: #ffffff;
+    width: fit-content;
+    padding-left: 2px;
+    padding-right: 8px;
+}
+
+.input {
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.btn-sub {
+    width: 23rem;
+    border-radius: 10px;
+}
+
+#input-name {
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    animation: slideIn 0.7s ease forwards;
+}
+
+#input-name.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+@keyframes slideIn {
+    0% {
+        bottom: -100%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+    }
+    100% {
+        bottom: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+    }
+    30% {
+        transform: translateY(-30%);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+    }
+    70% {
+        transform: translateY(-15%);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform: translateY(0);
+        animation-timing-function: ease-out;
+    }
+}
